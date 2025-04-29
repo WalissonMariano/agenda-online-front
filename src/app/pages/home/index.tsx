@@ -1,4 +1,4 @@
-import { Menu } from "../../shared/components/ui/menu";
+import { DefaultLayout } from "../../shared/components/ui/defaultLayout";
 
 export const Home = () => {
 
@@ -7,15 +7,10 @@ export const Home = () => {
     console.log(token);
 
     return(
-        <div className="flex min-h-screen">
-            <div className="w-64 bg-gradient-to-br from-yellow-100 to-orange-50 p-4">
-                <Menu />
+        <DefaultLayout>
+            <div>
+                Conteudo 2
             </div>
-            <div className="flex-1 p-8">
-                <div>
-                Seu conteúdo aqui
-                </div>
-            </div>
-        </div>
+        </DefaultLayout>
     )
 }
