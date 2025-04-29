@@ -9,7 +9,7 @@ export const Home = () => {
     return(
         <DefaultLayout>
             <div>
-                Conteudo 2
+                Home
             </div>
         </DefaultLayout>
     )

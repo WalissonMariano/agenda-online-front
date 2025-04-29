@@ -29,14 +29,20 @@ const menuItems = [
             },
             {
                 icon: "",
+                label: "Profissionais",
+                href: "/profissionais",
+                visible: ["admin"],
+            },
+            {
+                icon: "",
                 label: "Categorias",
-                href: "/product",
+                href: "/categoria",
                 visible: ["admin"],
             },
             {
                 icon: "",
                 label: "Produtos e Serviços",
-                href: "/product",
+                href: "/produtos",
                 visible: ["admin"],
             },
         ]
