@@ -52,6 +52,9 @@ const menuItems = [
 export const Menu = () => {
     return(
         <div className="flex flex-col justify-between h-full mt-4 text-sm">
+            <div className="w-30 text-center">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcR5U16C8yXgBpl7-Bc7Itjx3_LRl425zINA&s" alt="logo" />
+            </div>
             <div>
                 {menuItems.map((i)=>(
                     <div className="flex flex-col gap-2" key={i.title}>
