@@ -54,7 +54,7 @@ export const CadastroUsuario = () => {
       };
 
     return (
-        <div className="bg-gradient-to-br pt-20 from-yellow-100 to-orange-50 h-screen">
+        <div className="bg-gradient-to-br pt-5 from-yellow-100 to-orange-50 h-screen">
             <form onSubmit={handleSubmit} className="bg-white p-4 border rounded shadow-md max-w-md mx-auto">
                 <h2 className="text-xl font-bold mb-4">Cadastro de Usuário</h2>
                 {error && <p className="text-red-500">{error}</p>}
@@ -84,7 +84,7 @@ export const CadastroUsuario = () => {
                     <input type="password" name="password" value={user.password} onChange={handleChange} className="w-full p-2 border rounded" required />
                 </div>
                 
-                <button type="submit" disabled={loading} className="bg-blue-500 text-white p-2 rounded w-full">
+                <button type="submit" disabled={loading} className="bg-amber-400 text-gray-600 font-bold p-2 rounded w-full">
                     {loading ? "Cadastrando..." : "Cadastrar"}
                 </button>
                 <div className="mt-2 text-center">

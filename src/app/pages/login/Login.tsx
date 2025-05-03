@@ -52,8 +52,8 @@ export const Login = () => {
     return (
         <div className="text-gray-600 bg-gradient-to-br from-yellow-100 to-orange-50 justify-start pt-20 h-screen">
             <form onSubmit={handleSubmit} className="p-4 border rounded shadow-md max-w-md mx-auto bg-white" action="">
-                <div className="text-center">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcR5U16C8yXgBpl7-Bc7Itjx3_LRl425zINA&s" alt="" />
+                <div className="w-full flex justify-center">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcR5U16C8yXgBpl7-Bc7Itjx3_LRl425zINA&s" alt="" className="w-35" />
                 </div>
                 {error && <p className="text-red-500">{error}</p>}
                 <div className="mb-2">
@@ -64,7 +64,7 @@ export const Login = () => {
                     <label >Senha:</label>
                     <input className="w-full p-2 border rounded" name="password" type="password" value={login.password} onChange={handleChange} placeholder="Digite sua senha"/>
                 </div>
-                <button type="submit" disabled={loading} className="mb-2 bg-blue-500 text-white p-2 rounded w-full">
+                <button type="submit" disabled={loading} className="mb-2 bg-amber-400 hover:bg-amber-300 text-gray-600 font-bold p-2 rounded w-full">
                     {loading ? "Entrando..." : "Entrar"}
                 </button>
                 <div className="mb-2 text-center">

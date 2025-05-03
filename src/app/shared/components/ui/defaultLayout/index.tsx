@@ -1,4 +1,4 @@
-import { Menu } from "../menu"
+import { Menu } from "../menu/Menu"
 
 interface DefaultLayoutProps {
     children: React.ReactNode;
