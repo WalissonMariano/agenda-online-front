@@ -14,12 +14,20 @@ export interface Block {
     fields: Field[];
 }
 
+export interface PageRegister {
+    titlePage: string;
+    blocks: Block[];
+}
+
 export interface Props {
-    structure: Block[];
+    structure: PageRegister;
+    onBack: ()=> void;
 }
 
 
-export const Register: React.FC<Props> = ({structure}) => {
+export const Register: React.FC<Props> = ({structure, onBack}) => {
+//console.log({structure});
+
     const [registerData, setRegisterData] = useState<{[key: string]: string}>({});
     const [message, setMessage] = useState('');
 
@@ -43,45 +51,56 @@ export const Register: React.FC<Props> = ({structure}) => {
     }
 
     return (
-        <form onSubmit={handleSubmit} className="max-w-xl mx-auto p-6 bg-white rounded-xl shadow-md space-y-6">
-            {structure.map((block, idx) => (
-                <fieldset key={idx} className="border-t pt-4">
-                    <legend className="text-xl font-semibold text-gray-700 mb-2">
-                        {block.title}
-                    </legend>
-                    <div className="grid grid-cols-1 gap-4">
-                        {block.fields.map(field => (
-                            <div key={field.name}>
-                                <label className="block text-gray-600 font-medium mb-1">
-                                    {field.label}
-                                </label>
-                                <input 
-                                    type={field.type}
-                                    name={field.name}
-                                    required={field.required}
-                                    value={registerData[field.name] || ''}
-                                    onChange={handleChange}
-                                    className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                                />
-                            </div>
-                        ))}
-                    </div>
-                </fieldset>
-            ))}
+        <div className="p-6 bg-white rounded-xl shadow-md space-y-6 w-full">
+            <h1 className="text-2xl font-bold text-gray-600">{structure.titlePage}</h1>
+            <form onSubmit={handleSubmit} >
+                {structure.blocks.map((block, idx) => (
+                    <fieldset key={idx} className="pt-4 mt-5">
+                        <legend className="text-xl font-semibold  bg-amber-400 text-gray-600 mt-6 mb-2 p-1 w-full">
+                            {block.title}
+                        </legend>
+                        <div className="grid grid-cols-1 gap-4">
+                            {block.fields.map(field => (
+                                <div key={field.name}>
+                                    <label className="block text-gray-600 font-medium mb-1">
+                                        {field.label}
+                                    </label>
+                                    <input 
+                                        type={field.type}
+                                        name={field.name}
+                                        required={field.required}
+                                        value={registerData[field.name] || ''}
+                                        onChange={handleChange}
+                                        className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                    </fieldset>
+                ))}
+                <div className="text-center">
+                    <button 
+                        onClick={onBack}
+                        className="w-1/3 mt-3 mr-3 bg-red-400 hover:bg-red-200 text-gray-600 font-semibold py-2 px-4 rounded-lg transition"    
+                    >
+                        Voltar
+                    </button>
+                    <button 
+                        type="submit"
+                        className="w-1/3 mt-3 bg-amber-400 hover:bg-amber-300 text-gray-600 font-semibold py-2 px-4 rounded-lg transition"    
+                    >
+                        Salvar
+                    </button>
+                </div>
+                
+                
+                {message && (
+                    <p className="text-center text-sm mt-4 text-green-600">
+                        {message}
+                    </p>
+                )}
 
-            <button 
-                type="submit"
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition"    
-            >
-                Incluir
-            </button>
-            
-            {message && (
-                <p className="text-center text-sm mt-4 text-green-600">
-                    {message}
-                </p>
-            )}
-
-        </form>
+            </form>
+        </div>
     )
 }

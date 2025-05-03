@@ -59,8 +59,8 @@ const menuItems = [
 export const Menu = () => {
     return(
         <div className="flex flex-col justify-between h-full mt-4 text-sm">
-            <div className="w-20 text-center">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcR5U16C8yXgBpl7-Bc7Itjx3_LRl425zINA&s" alt="logo" />
+            <div className="w-full flex justify-center">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcR5U16C8yXgBpl7-Bc7Itjx3_LRl425zINA&s" alt="logo"className="w-20" />
             </div>
             <div>
                 {menuItems.map((i)=>(
@@ -71,13 +71,12 @@ export const Menu = () => {
                         </span>
                         {i.items.map(item=>(
                             <>
-                            <div className="flex items-center justify-center lg:justify-start gap-4 text-gray-500 py-2 rounded-md">
-                                <label>{item.icon}</label>
-                                <Link  to={item.href}>
-                                    {item.label}
-                                </Link>
-                            </div>
-                                
+                                <div className="flex items-center justify-center lg:justify-start gap-4 text-gray-500 py-2 rounded-md">
+                                    <label>{item.icon}</label>
+                                    <Link  to={item.href}>
+                                        {item.label}
+                                    </Link>
+                                </div>
                             </>
                         ))}
                     </div>
