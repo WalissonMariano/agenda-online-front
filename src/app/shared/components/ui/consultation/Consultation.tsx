@@ -1,3 +1,6 @@
+import { VscEdit } from "react-icons/vsc";
+import { VscTrash } from "react-icons/vsc";
+
 interface Column<T> {
     header: string;
     accessor: keyof T;
@@ -26,6 +29,8 @@ export const Consultation = <T,>({title, columns, data, onNew}: DataConsultation
         <table className="w-full table-auto">
             <thead>
             <tr>
+                <th className="border px-4 py-2">
+                </th>
                 {columns.map((col) => (
                 <th key={String(col.accessor)} className="border px-4 py-2 text-left">
                     {col.header}
@@ -37,6 +42,14 @@ export const Consultation = <T,>({title, columns, data, onNew}: DataConsultation
             {data.length > 0 ? (
                 data.map((item, idx) => (
                 <tr key={idx} className="hover:bg-gray-100">
+                    <td className="border px-4 py-2">
+                        <button className="mr-5 bg-blue-400 hover:bg-blue-200 text-white text-xl p-3 border rounded-sm">
+                            <VscEdit />
+                        </button>
+                        <button className="mr-0 bg-red-400 hover:bg-red-200 text-white text-xl p-3 border rounded-sm">
+                            <VscTrash />
+                        </button>
+                    </td>
                     {columns.map((col) => (
                     <td key={String(col.accessor)} className="border px-4 py-2">
                         {String(item[col.accessor])}
