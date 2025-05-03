@@ -81,7 +81,7 @@ export const Register: React.FC<Props> = ({structure, onBack}) => {
                 <div className="text-center">
                     <button 
                         onClick={onBack}
-                        className="w-1/3 mt-3 mr-3 bg-red-400 hover:bg-red-200 text-gray-600 font-semibold py-2 px-4 rounded-lg transition"    
+                        className="w-1/3 mt-3 mr-3 bg-red-400 hover:bg-red-300 text-gray-600 font-semibold py-2 px-4 rounded-lg transition"    
                     >
                         Voltar
                     </button>

@@ -1,13 +1,14 @@
 import { BrowserRouter, Route, Routes } from "react-router"
 import { Login } from "../pages/login"
 import { CadastroUsuario } from "../pages/registerUser"
-import { Home } from "../pages/home"
+import { Home } from "../pages/home/Home"
 import { Product } from "../pages/product/ConsultationProduct"
-import { Categorie } from "../pages/categorie"
+import { Categorie } from "../pages/categorie/ConsultationCategorie"
 import { Establishment } from "../pages/establishment"
 import { Professional } from "../pages/professional"
-import { Schedule } from "../pages/schedule"
+import { Schedule } from "../pages/schedule/Schedule"
 import { RegisterProduct } from "../pages/product/RegisterProduct"
+import { RegisterCategorie } from "../pages/categorie/RegisterCategorie"
 
 export const RoutesApp = () => {
     return (
@@ -22,6 +23,7 @@ export const RoutesApp = () => {
                 <Route path="/produtos" element={<Product/>} />
                 <Route path="/cadastroProdutos" element={<RegisterProduct/>} />
                 <Route path="/categoria" element={<Categorie/>} />
+                <Route path="/cadastroCategoria" element={<RegisterCategorie/>} />  
             </Routes>
         </BrowserRouter>
     )

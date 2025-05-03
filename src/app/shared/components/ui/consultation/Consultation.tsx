@@ -46,7 +46,7 @@ export const Consultation = <T,>({title, columns, data, onNew}: DataConsultation
                         <button className="mr-1 bg-amber-400 hover:bg-blue-200 text-gray-600 text-sm p-2 border rounded-sm border-none">
                             <AiFillEdit />
                         </button>
-                        <button className="mr-0 bg-red-400 hover:bg-red-200 text-gray-600 text-sm p-2 border rounded-sm border-none">
+                        <button className="mr-0 bg-red-400 hover:bg-red-300 text-gray-600 text-sm p-2 border rounded-sm border-none">
                             <AiFillDelete />
                         </button>
                     </td>

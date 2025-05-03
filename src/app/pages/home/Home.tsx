@@ -8,7 +8,7 @@ export const Home = () => {
 
     return(
         <DefaultLayout>
-            <div>
+            <div className="p-6 bg-white rounded-xl shadow-md space-y-6 w-full" style={{ minHeight: '90vh' }}>
                 Home
             </div>
         </DefaultLayout>
