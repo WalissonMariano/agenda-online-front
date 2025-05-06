@@ -5,10 +5,11 @@ import { Home } from "../pages/home/Home"
 import { Product } from "../pages/product/ConsultationProduct"
 import { Categorie } from "../pages/categorie/ConsultationCategorie"
 import { Establishment } from "../pages/establishment"
-import { Professional } from "../pages/professional"
+import { Professional } from "../pages/professional/ConsultationProfessional"
 import { Schedule } from "../pages/schedule/Schedule"
 import { RegisterProduct } from "../pages/product/RegisterProduct"
 import { RegisterCategorie } from "../pages/categorie/RegisterCategorie"
+import { RegisterProfessional } from "../pages/professional/RegisterProfessional"
 
 export const RoutesApp = () => {
     return (
@@ -20,6 +21,7 @@ export const RoutesApp = () => {
                 <Route path="/agenda" element={<Schedule/>} />
                 <Route path="/estabelecimento" element={<Establishment/>} />
                 <Route path="/profissionais" element={<Professional/>} />
+                <Route path="/cadastroProfissional" element={<RegisterProfessional/>} />
                 <Route path="/produtos" element={<Product/>} />
                 <Route path="/cadastroProdutos" element={<RegisterProduct/>} />
                 <Route path="/categoria" element={<Categorie/>} />
